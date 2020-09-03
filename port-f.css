@@ -1,0 +1,300 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* .icon {
+  visibility: hidden;
+  position: fixed;
+} */
+div.hamburger-menu {
+  top: 0;
+  visibility: hidden;
+}
+
+#menu_toggle {
+  opacity: 0;
+}
+
+#menu_toggle:checked~.menu_btn>span {
+  transform: rotate(45deg);
+}
+
+#menu_toggle:checked~.menu_btn>span:before {
+  top: 0;
+  transform: rotate(0);
+}
+
+#menu_toggle:checked~.menu_btn>span:after {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+#menu_toggle:checked~.menu_box {
+  visibility: visible;
+  left: 0;
+}
+
+.menu_btn {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 10px;
+  left: 20px;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.menu_btn>span,
+.menu_btn>span:before,
+.menu_btn>span:after {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #616161;
+  transition-duration: .25s;
+}
+
+.menu_btn>span:before {
+  content: '';
+  top: -8px;
+}
+
+.menu_btn>span:after {
+  content: '';
+  top: 8px;
+}
+
+.menu_box {
+  display: block;
+  position: fixed;
+  visibility: hidden;
+  top: 0;
+  left: -100%;
+  width: 150px;
+  height: 38%;
+  margin: 0;
+  padding: 60px 0;
+  list-style: none;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+  background-color: rgb(240, 208, 69);
+  background-size: cover;
+  box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+  transition-duration: .25s;
+
+}
+
+.menu_item {
+  display: block;
+  padding: 12px 24px;
+  color: #333;
+  font-family: sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  transition-duration: .25s;
+}
+
+.menu_item a {
+  text-decoration: none;
+  color: rgb(23, 90, 37);
+}
+
+.menu_item:hover {
+  background-color: #cfd8dc;
+}
+
+#navbar {
+  top: 0;
+  position: fixed;
+  width: 100%;
+  display: grid;
+  background-color: rgb(240, 208, 69);
+  grid-template-columns: repeat(4, 10%);
+  gap: 5%;
+  height: 8vh;
+  justify-content: end;
+  align-items: center;
+}
+
+.menu>a {
+  text-decoration: none;
+  color: rgb(23, 90, 37);
+}
+
+.header {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("header.jpg");
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: repeat(1, 1fr);
+  background-size: 100% 100%;
+  align-items: center;
+}
+
+.header>div {
+  width: 80%;
+  margin: auto;
+  color: white;
+}
+
+.header>div>h1 {
+  font-size: 2.5rem;
+}
+
+.header>div {
+  font-size: 1.5rem;
+}
+
+#projects {
+  background-color: rgb(240, 208, 69);
+  background-size: cover;
+  display: grid;
+  grid-template-columns: repeat (4, 1fr);
+  gap: 2%;
+  padding: 5%;
+  margin-bottom: 50px;
+}
+
+.stuff {
+  border: 3px solid white;
+  height: 89%;
+  width: 100%;
+  margin: 2%;
+}
+
+img {
+  height: 6rem;
+  width: 100%;
+}
+
+.stuff>a {
+  color: rgb(23, 90, 37);
+}
+
+.stuff {
+  text-align: center;
+}
+
+.stuff>a {
+  padding: 0.5rem;
+}
+
+#contact {
+  width: 100%;
+  background-color: white;
+  padding: 4rem;
+}
+
+#contact h1 {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: gray;
+}
+
+#contact>div {
+  width: 80%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-evenly;
+  text-align: center;
+}
+
+#contact>div i:hover {
+  color: rgb(168, 8, 8);
+}
+
+#contact>div i {
+  font-size: 3rem;
+  cursor: pointer;
+  color: gray;
+}
+
+.footer {
+  background-color: rgb(240, 208, 69);
+  width: 100%;
+  text-align: center;
+  color: rgb(23, 90, 37);
+  height: 5vh;
+  display: grid;
+  align-items: center;
+}
+
+@media only screen and (max-width: 425px) {
+  #projects {
+    grid-template-columns: repeat(1, 1fr);
+    justify-items: center;
+    gap: 1%;
+    height: 260vh;
+
+  }
+
+  div.hamburger-menu {
+    visibility: visible;
+  }
+
+  .icon {
+    visibility: visible;
+    left: 2px;
+    font-size: 2rem;
+    position: fixed;
+    z-index: 2;
+    margin: 4px;
+  }
+
+  .icon:hover {
+    cursor: pointer;
+  }
+
+  #contact h1 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .header>div {
+    margin-top: 7rem;
+  }
+
+  .menu>a {
+    display: none;
+  }
+
+  #contact>div i {
+    font-size: 2.5rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  #projects {
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-between;
+    height: 150vh;
+  }
+
+  #contact h1 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  #projects {
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: space-between;
+    height: 100vh;
+  }
+
+  #contact h1 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+  }
+}
